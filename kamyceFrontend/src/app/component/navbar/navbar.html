@@ -1,0 +1,18 @@
+<p>navbar works!</p>
+<nav class="navbar">
+  <div class="nav-left">
+    <a routerLink="/hero" routerLinkActive="active">Accueil</a>
+
+    <a class="nav-link" (click)="scrollTo('services')">Services</a>
+    <a class="nav-link" (click)="scrollTo('zone')">Zone de prestation</a>
+    <a class="nav-link" (click)="scrollTo('vision')">À propos</a>
+
+    <a routerLink="/zones" routerLinkActive="active">Bruxelles et périphérie</a>
+    <a routerLink="/contact" routerLinkActive="active" class="contact-btn">Contact</a>
+  </div>
+
+  <div class="nav-right">
+    Infirmière à domicile <br />
+    +32 484 48 45 98
+  </div>
+</nav>

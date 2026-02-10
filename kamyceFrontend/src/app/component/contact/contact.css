@@ -1,0 +1,118 @@
+.contact-section {
+  padding: 100px 90px;
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  background-image: url('https://f.maformation.fr/edito/sites/3/2023/04/secretaire-medical.jpg');
+  
+  background-size: cover; /* couvre toute la section */
+  background-position: center; /* centre l'image */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* texte en blanc */
+}
+
+.bg{
+  background-color: hsl(172, 43%, 43%);
+}
+h1{
+  text-align: center;
+}
+
+
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+}
+
+.contact-form input.ng-touched.ng-invalid,
+.contact-form textarea.ng-touched.ng-invalid {
+  border-color: #ef4444;
+}
+
+.error {
+  color: #ef4444;
+  font-size: 12px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-whatsapp {
+  flex: 1;
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn-mail {
+  flex: 1;
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn-whatsapp:disabled,
+.btn-mail:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Loader */
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.success-message {
+  margin-top: 24px;
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.error-message {
+  margin-top: 24px;
+  color: #dc2626;
+  font-weight: 600;
+}

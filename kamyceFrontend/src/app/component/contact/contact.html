@@ -1,0 +1,43 @@
+
+<div class="bg">
+    <h1>Contact</h1>
+<section id ="contact" class="contact-section">
+                    
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+        <input type="text" formControlName="name" placeholder="Nom complet" />
+        <small class="error" *ngIf="f.name.touched && f.name.errors?.['required']">Le nom est obligatoire.</small>
+        <small class="error" *ngIf="f.name.touched && f.name.errors?.['minlength']">Minimum 3 caractères.</small>
+
+        <input type="email" formControlName="email" placeholder="Adresse email" />
+        <small class="error" *ngIf="f.email.touched && f.email.errors?.['required']">L'email est obligatoire.</small>
+        <small class="error" *ngIf="f.email.touched && f.email.errors?.['email']">Format d'email invalide.</small>
+
+        <input type="tel" formControlName="phone" placeholder="Téléphone" />
+        <small class="error" *ngIf="f.phone.touched && f.phone.errors?.['required']">Le téléphone est obligatoire.</small>
+        <small class="error" *ngIf="f.phone.touched && f.phone.errors?.['pattern']">Numéro invalide.</small>
+
+        <textarea formControlName="message" rows="4" placeholder="Votre message"></textarea>
+        <small class="error" *ngIf="f.message.touched && f.message.errors?.['required']">Le message est obligatoire.</small>
+        <small class="error" *ngIf="f.message.touched && f.message.errors?.['minlength']">Minimum 10 caractères.</small>
+
+        <div class="buttons">
+        <button type="submit" class="btn-whatsapp" [disabled]="isLoading">
+            <span *ngIf="!isLoading">Envoyer via WhatsApp</span>
+            <span *ngIf="isLoading" class="loader"></span>
+        </button>
+
+        <button type="button" class="btn-mail" (click)="sendEmail()" [disabled]="isLoading">
+            <span *ngIf="!isLoading">Envoyer par email</span>
+            <span *ngIf="isLoading" class="loader"></span>
+        </button>
+        </div>
+    </form>
+
+    
+  <p class="success-message" *ngIf="successMessage">{{ successMessage }}</p>
+  <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+
+</section>
+</div>
